@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cajista"
+version = "0.1.0"
+description = "Conversor local de Markdown a HTML, DOCX y PDF usando Highlight"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "markdown-it-py>=3.0,<5",
+  "beautifulsoup4>=4.12,<5",
+  "lxml>=5.2,<7",
+  "python-docx>=1.1,<2",
+  "weasyprint>=67,<70",
+  "PyYAML>=6,<7",
+  "typer>=0.12,<1",
+  "tinycss2>=1.4,<2",
+  "Pillow>=10,<13",
+]
+
+[project.scripts]
+cajista = "cajista.cli:app"
+
+[tool.setuptools.packages.find]
+include = ["cajista*"]
