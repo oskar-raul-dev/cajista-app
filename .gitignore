@@ -1,0 +1,50 @@
+# Bytecode y compilados de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Empaquetado y distribución
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+wheels/
+pip-wheel-metadata/
+MANIFEST
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# Pruebas, cobertura y herramientas de análisis
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.mypy_cache/
+.ruff_cache/
+.pytype/
+.dmypy.json
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Artefactos de cajista
+output/
+.build/
+.cache/
