@@ -1,0 +1,63 @@
+# Precedence: CLI > this YAML > built-in defaults.
+project:
+  output_dir: ./output
+  build_dir: ./.build
+  cache_dir: ./.cache/highlight
+  overwrite: false
+  keep_html: false
+
+formats:
+  docx: true
+  pdf: true
+  html: false
+
+styles:
+  css: ./styles/default.css
+  docx_from_css: true
+  reference_docx: null
+
+highlight:
+  executable: highlight
+  # Empty uses Highlight's installed default theme.
+  # See: highlight --list-scripts=themes
+  theme: ""
+  inline_css: true
+  fragment: true
+  cache: true
+  fallback: plain
+  aliases:
+    js: javascript
+    jsx: javascript
+    ts: typescript
+    tsx: typescript
+    py: python
+    sh: bash
+    shell: bash
+    ps1: powershell
+    yml: yaml
+    c++: cpp
+    c#: csharp
+    cs: csharp
+    md: markdown
+    html5: html
+
+pdf:
+  engine: weasyprint
+
+word:
+  split_code_by_line: true
+  repeat_table_header: true
+  disable_spellcheck_in_code: true
+  keep_headings_with_next: true
+
+qa:
+  enabled: false
+  render_docx: true
+  render_pdf: true
+  libreoffice_executable: null
+  pdftoppm_executable: null
+
+batch:
+  recursive: false
+  pattern: "*.md"
+  preserve_directories: false

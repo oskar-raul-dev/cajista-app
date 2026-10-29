@@ -1,10 +1,10 @@
-# Bytecode y compilados de Python
+# Python bytecode and compiled files
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 
-# Empaquetado y distribución
+# Packaging and distribution
 build/
 dist/
 *.egg-info/
@@ -14,14 +14,14 @@ wheels/
 pip-wheel-metadata/
 MANIFEST
 
-# Entornos virtuales
+# Virtual environments
 .venv/
 venv/
 env/
 ENV/
 .env
 
-# Pruebas, cobertura y herramientas de análisis
+# Tests, coverage and analysis tools
 .pytest_cache/
 .tox/
 .nox/
@@ -37,14 +37,17 @@ coverage.xml
 # Jupyter
 .ipynb_checkpoints/
 
-# Sistema operativo y editores
+# OS and editors
 .DS_Store
 Thumbs.db
 .idea/
 .vscode/
 *.swp
 
-# Artefactos de cajista
+# cajista artifacts
 output/
 .build/
 .cache/
+
+# VS Code
+*.code-workspace

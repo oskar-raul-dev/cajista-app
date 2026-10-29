@@ -1,0 +1,9 @@
+markdown-it-py>=3.0,<5
+beautifulsoup4>=4.12,<5
+lxml>=5.2,<7
+python-docx>=1.1,<2
+weasyprint>=67,<70
+PyYAML>=6,<7
+typer>=0.12,<1
+tinycss2>=1.4,<2
+Pillow>=10,<13
