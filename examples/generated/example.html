@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>example</title>
+<style>
+/*
+ * Visual source of truth for the project.
+ * The PDF applies the full CSS. The DOCX mainly reads the :root variables.
+ */
+:root {
+  --page-size: A4;
+  --page-margin-top: 2.5cm;
+  --page-margin-right: 2.5cm;
+  --page-margin-bottom: 2.5cm;
+  --page-margin-left: 2.5cm;
+
+  --font-body: Arial, "Liberation Sans", "DejaVu Sans", sans-serif;
+  --font-mono: Consolas, "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace;
+  --font-size-body: 11pt;
+  --font-size-code: 9.2pt;
+  --line-height-body: 1.5;
+  --line-height-code: 1.4;
+
+  --color-primary: #2c3e50;
+  --color-accent: #64748b;
+  --color-text: #1f2937;
+  --color-text-alt: #374151;
+  --color-border: #d1d5db;
+  --color-surface: #f3f4f6;
+  --color-surface-alt: #f9fafb;
+  --color-link: #2c3e50;
+
+  --h1-size: 24pt;
+  --h2-size: 20pt;
+  --h3-size: 16pt;
+  --h4-size: 14pt;
+  --h5-size: 12pt;
+  --h6-size: 11pt;
+
+  --table-font-size: 9.5pt;
+  --footer-font-size: 9pt;
+  --footer-color: #64748b;
+}
+
+@page {
+  size: var(--page-size);
+  margin: var(--page-margin-top) var(--page-margin-right) var(--page-margin-bottom) var(--page-margin-left);
+  @bottom-center {
+    content: "Página " counter(page) " de " counter(pages);
+    font-family: var(--font-body);
+    font-size: var(--footer-font-size);
+    color: var(--footer-color);
+  }
+}
+
+html, body { background: #fff; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-text);
+}
+.document { max-width: 100%; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1.15em 0 0.45em;
+  padding-bottom: 0.15em;
+  color: var(--color-primary);
+  font-weight: 700;
+  border-bottom: 1px solid var(--color-accent);
+  break-after: avoid;
+}
+h1 { font-size: var(--h1-size); }
+h2 { font-size: var(--h2-size); }
+h3 { font-size: var(--h3-size); }
+h4 { font-size: var(--h4-size); }
+h5 { font-size: var(--h5-size); }
+h6 { font-size: var(--h6-size); }
+p { margin: 0 0 0.65em; }
+code { font-family: var(--font-mono); }
+p code, li code, td code, th code { padding: 0; color: inherit; background: transparent; border: 0; }
+
+.code-container { margin: 1rem 0; break-inside: auto; }
+.code-container pre, .verbatim-block {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 12px 14px 12px 18px;
+  overflow-wrap: normal;
+  word-break: normal;
+  white-space: pre-wrap;
+  tab-size: 2;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-code);
+  line-height: var(--line-height-code);
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 6px;
+}
+.verbatim-block { background: var(--color-surface-alt); }
+blockquote {
+  margin: 1rem 0;
+  padding: 10px 14px;
+  color: var(--color-text-alt);
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 6px;
+  break-inside: avoid;
+}
+table { width: 100%; margin: 1rem 0; border-collapse: collapse; font-size: var(--table-font-size); }
+thead { display: table-header-group; }
+tr { break-inside: avoid; }
+th, td { padding: 8px 10px; text-align: left; vertical-align: top; border: 1px solid var(--color-border); }
+th { color: var(--color-primary); font-weight: 700; background: var(--color-surface); }
+tbody tr:nth-child(even) { background: var(--color-surface-alt); }
+ul, ol { margin: 0.45em 0 0.75em 1.4em; padding: 0; }
+li { margin-bottom: 0.25em; }
+a { color: var(--color-link); text-decoration: underline; }
+img, svg { max-width: 100%; height: auto; }
+
+</style>
+</head>
+<body>
+<main class="document">
+<h1>Test document</h1>
+<p>Paragraph with <strong>bold</strong>, <em>italic</em>, <code>inline code</code> and a <a href="https://example.com">link</a>.</p>
+<h2>JavaScript code</h2>
+<figure class="code-container" data-language="javascript">
+<pre><code><span style="color:#000000; font-weight:bold">const</span> greeting <span style="color:#000000">=</span> <span style="color:#bf0303">&quot;Hello&quot;</span><span style="color:#000000">;</span>
+<span style="color:#000000; font-weight:bold">function</span> <span style="color:#010181">sayHello</span><span style="color:#000000">(</span>name<span style="color:#000000">) {</span>
+  console<span style="color:#000000">.</span><span style="color:#010181">log</span><span style="color:#000000">(</span><span style="color:#bf0303">`</span><span style="color:#0057ae">${greeting}</span><span style="color:#bf0303">,</span> <span style="color:#0057ae">${name}</span><span style="color:#bf0303">`</span><span style="color:#000000">);</span>
+<span style="color:#000000">}</span>
+<span style="color:#010181">sayHello</span><span style="color:#000000">(</span><span style="color:#bf0303">&quot;world&quot;</span><span style="color:#000000">);</span></code></pre>
+</figure>
+<h2>Table</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Highlight</td>
+<td>Syntax highlighting</td>
+</tr>
+<tr>
+<td>WeasyPrint</td>
+<td>PDF</td>
+</tr>
+<tr>
+<td>python-docx</td>
+<td>Word</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>A test quote.</p>
+</blockquote>
+<ol>
+<li>First item</li>
+<li>Second item
+<ul>
+<li>Sublist</li>
+</ul>
+</li>
+</ol>
+
+</main>
+</body>
+</html>
